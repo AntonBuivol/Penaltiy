@@ -48,6 +48,7 @@ namespace Koolitused.Models
 
     public class LoginViewModel
     {
+        public int id { get; set; }
         [Required]
         [Display(Name = "Email")]
         [EmailAddress]
@@ -64,6 +65,7 @@ namespace Koolitused.Models
 
     public class RegisterViewModel
     {
+        public int id { get; set; }
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
