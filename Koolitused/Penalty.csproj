@@ -244,12 +244,8 @@
     <Content Include="Views\Home\Penalty_Edit.cshtml" />
     <Content Include="Views\Home\Penalties.cshtml" />
     <Content Include="Views\Home\Penalty_Create.cshtml" />
-    <Content Include="Views\Home\Accounts_Create.cshtml" />
-    <Content Include="Views\Home\Accounts.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

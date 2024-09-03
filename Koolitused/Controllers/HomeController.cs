@@ -65,18 +65,18 @@ namespace Koolitused.Controllers
         [HttpGet]
         public ActionResult Penalty_Edit(int? id)
         {
-            AccountController accountController = db.Users.Find(id);
-            if (accountController == null)
+            Penalty penalty = db.Penalty.Find(id);
+            if (penalty == null)
             {
                 return HttpNotFound();
             }
-            return View(accountController);
+            return View(penalty);
         }
 
         [HttpPost, ActionName("Penalty_Edit")]
-        public ActionResult Penalty_EditConfirmed(AccountController accountController)
+        public ActionResult Penalty_EditConfirmed(Penalty penalty)
         {
-            db.Entry(accountController).State = EntityState.Modified;
+            db.Entry(penalty).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Penalties");
         }
@@ -87,66 +87,6 @@ namespace Koolitused.Controllers
 
         //users
 
-        public ActionResult Accounts()
-        {
-            IEnumerable<AccountController> accountController = db.Users;
-            return View(accountController);
-        }
-
-        [HttpGet]
-        public ActionResult Accounts_Create()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Accounts_Create(AccountController accountController)
-        {
-            db.Users.Add(accountController);
-            db.SaveChanges();
-            return RedirectToAction("Penalties");
-        }
-
-        [HttpGet]
-        public ActionResult Accounts_Delete(int id)
-        {
-            AccountController accountController = db.Users.Find(id);
-            if (accountController == null)
-            {
-                return HttpNotFound();
-            }
-            return View(accountController);
-        }
-
-        [HttpPost, ActionName("Penalty_Delete")]
-        public ActionResult Accounts_DeleteConfirmed(int id)
-        {
-            AccountController accountController = db.Users.Find(id);
-            if (accountController == null)
-            {
-                return HttpNotFound();
-            }
-            db.Users.Remove(accountController);
-            db.SaveChanges();
-            return RedirectToAction("Penalties");
-        }
-
-        [HttpGet]
-        public ActionResult Accounts_Edit(int? id)
-        {
-            AccountController accountController = db.Users.Find(id);
-            if (accountController == null)
-            {
-                return HttpNotFound();
-            }
-            return View(accountController);
-        }
-
-        [HttpPost, ActionName("Penalty_Edit")]
-        public ActionResult Accounts_EditConfirmed(AccountController accountController)
-        {
-            db.Entry(accountController).State = EntityState.Modified;
-            db.SaveChanges();
-            return RedirectToAction("Penalties");
-        }
+        
     }
 }

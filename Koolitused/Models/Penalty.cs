@@ -10,9 +10,8 @@ namespace Koolitused.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required (ErrorMessage = "Must be 6 symbols")]
         [StringLength(6, ErrorMessage = "Must be 6 symbols", MinimumLength = 6)]
-        [Display(Name = "CarNumber")]
         public string CarNumber { get; set; }
 
         public string Name { get; set; }

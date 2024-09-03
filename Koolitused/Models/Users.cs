@@ -8,6 +8,8 @@ namespace Koolitused.Models
 {
     public class Users
     {
+        public int Id { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
